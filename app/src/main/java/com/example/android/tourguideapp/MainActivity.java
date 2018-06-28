@@ -70,11 +70,11 @@ public class MainActivity extends AppCompatActivity {
                         } else if (id == R.id.museums) {
                             replaceFragment(new MuseumsFragment());
                         } else if (id == R.id.restaurants) {
-
+                            replaceFragment(new RestaurantsFragment());
                         } else if (id == R.id.pubs) {
-
+                            replaceFragment(new PubsFragment());
                         } else if (id == R.id.hotels) {
-
+                            replaceFragment(new HotelsFragment());
                         }
 
                         mDrawerLayout.closeDrawers();
