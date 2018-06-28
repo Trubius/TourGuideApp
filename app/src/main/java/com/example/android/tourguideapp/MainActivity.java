@@ -40,14 +40,12 @@ public class MainActivity extends AppCompatActivity {
             setupDrawerContent(navigationView);
         }
 
-        if (findViewById(R.id.container) != null) {
-            if (savedInstanceState != null) {
-                return;
-            }
-            Fragment fragment = new AllPlacesFragment();
-            transaction.add(R.id.container, fragment);
-            transaction.commit();
+        if (savedInstanceState != null) {
+            return;
         }
+        Fragment fragment = new AllPlacesFragment();
+        transaction.add(R.id.container, fragment);
+        transaction.commit();
     }
 
     @Override
