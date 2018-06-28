@@ -66,19 +66,9 @@ public class MainActivity extends AppCompatActivity {
                         int id = item.getItemId();
 
                         if (id == R.id.popular_places) {
-                            ((FrameLayout) findViewById(R.id.container)).removeAllViews();
-                            Fragment fragment = new PopularPlacesFragment();
-                            transaction = getSupportFragmentManager().beginTransaction();
-                            transaction.replace(R.id.container, fragment);
-                            transaction.addToBackStack(null);
-                            transaction.commit();
+                            replaceFragment(new PopularPlacesFragment());
                         } else if (id == R.id.museums) {
-                            ((FrameLayout) findViewById(R.id.container)).removeAllViews();
-                            Fragment fragment = new MuseumsFragment();
-                            transaction = getSupportFragmentManager().beginTransaction();
-                            transaction.replace(R.id.container, fragment);
-                            transaction.addToBackStack(null);
-                            transaction.commit();
+                            replaceFragment(new MuseumsFragment());
                         } else if (id == R.id.restaurants) {
 
                         } else if (id == R.id.pubs) {
@@ -89,6 +79,14 @@ public class MainActivity extends AppCompatActivity {
 
                         mDrawerLayout.closeDrawers();
                         return true;
+                    }
+
+                    private void replaceFragment(Fragment fragment) {
+                        ((FrameLayout) findViewById(R.id.container)).removeAllViews();
+                        transaction = getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.container, fragment);
+                        transaction.addToBackStack(null);
+                        transaction.commit();
                     }
                 });
     }
