@@ -63,23 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem item) {
                         // Handle navigation view item clicks here.
-                        switch (item.getItemId()){
-                            case R.id.popular_places:
-                                replaceFragment(new PopularPlacesFragment());
-                                break;
-                            case R.id.museums:
-                                replaceFragment(new MuseumsFragment());
-                                break;
-                            case R.id.restaurants:
-                                replaceFragment(new RestaurantsFragment());
-                                break;
-                            case R.id.pubs:
-                                replaceFragment(new PubsFragment());
-                                break;
-                            case R.id.hotels:
-                                replaceFragment(new HotelsFragment());
-                                break;
-                        }
+                        replaceFragment(getFragmentByItemId(item.getItemId()));
                         mDrawerLayout.closeDrawers();
                         return true;
                     }
@@ -90,6 +74,23 @@ public class MainActivity extends AppCompatActivity {
                         transaction.replace(R.id.container, fragment);
                         transaction.addToBackStack(null);
                         transaction.commit();
+                    }
+
+                    private Fragment getFragmentByItemId(int itemId) {
+                        switch (itemId) {
+                            case R.id.popular_places:
+                                return new PopularPlacesFragment();
+                            case R.id.museums:
+                                return new MuseumsFragment();
+                            case R.id.restaurants:
+                                return new RestaurantsFragment();
+                            case R.id.pubs:
+                                return new PubsFragment();
+                            case R.id.hotels:
+                                return new HotelsFragment();
+                            default:
+                                return new AllPlacesFragment();
+                        }
                     }
                 });
     }
