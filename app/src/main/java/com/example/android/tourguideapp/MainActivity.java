@@ -1,32 +1,28 @@
 package com.example.android.tourguideapp;
 
-import android.content.Context;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.DisplayMetrics;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
-    private PlaceAdapter mPlaceAdapter;
+    android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        int mNoOfColumns = Utility.calculateNoOfColumns(getApplicationContext());
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -44,13 +40,14 @@ public class MainActivity extends AppCompatActivity {
             setupDrawerContent(navigationView);
         }
 
-        List<Place> listPlaces = getPlacesList();
-        mPlaceAdapter = new PlaceAdapter(this, listPlaces);
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        recyclerView.setAdapter(mPlaceAdapter);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, mNoOfColumns));
-
-
+        if (findViewById(R.id.container) != null) {
+            if (savedInstanceState != null) {
+                return;
+            }
+            Fragment fragment = new AllPlacesFragment();
+            transaction.add(R.id.container, fragment);
+            transaction.commit();
+        }
     }
 
     @Override
@@ -71,15 +68,25 @@ public class MainActivity extends AppCompatActivity {
                         int id = item.getItemId();
 
                         if (id == R.id.popular_places) {
-                            mPlaceAdapter.setCategory(Place.POPULARS);
+                            ((FrameLayout) findViewById(R.id.container)).removeAllViews();
+                            Fragment fragment = new PopularPlacesFragment();
+                            transaction = getSupportFragmentManager().beginTransaction();
+                            transaction.replace(R.id.container, fragment);
+                            transaction.addToBackStack(null);
+                            transaction.commit();
                         } else if (id == R.id.museums) {
-                            mPlaceAdapter.setCategory(Place.MUSEUMS);
+                            ((FrameLayout) findViewById(R.id.container)).removeAllViews();
+                            Fragment fragment = new MuseumsFragment();
+                            transaction = getSupportFragmentManager().beginTransaction();
+                            transaction.replace(R.id.container, fragment);
+                            transaction.addToBackStack(null);
+                            transaction.commit();
                         } else if (id == R.id.restaurants) {
-                            mPlaceAdapter.setCategory(Place.RESTAURANTS);
+
                         } else if (id == R.id.pubs) {
-                            mPlaceAdapter.setCategory(Place.PUBS);
+
                         } else if (id == R.id.hotels) {
-                            mPlaceAdapter.setCategory(Place.HOTELS);
+
                         }
 
                         mDrawerLayout.closeDrawers();
@@ -88,19 +95,9 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    // calculate number of columns and load the image as calculated
-    private static class Utility {
-        public static int calculateNoOfColumns(Context context) {
-            DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-            float dpWidth = displayMetrics.widthPixels / displayMetrics.density;
-            int noOfColumns = (int) (dpWidth / 180);
-            return noOfColumns;
-        }
-    }
+    public static ArrayList<Place> getPlacesList() {
 
-    private List<Place> getPlacesList() {
-
-        List<Place> places = new ArrayList<Place>();
+        ArrayList<Place> places = new ArrayList<Place>();
         places.add(new Place("Budapest", Place.PUBS));
         places.add(new Place("Text2", Place.PUBS));
         places.add(new Place("Text3", Place.RESTAURANTS));
