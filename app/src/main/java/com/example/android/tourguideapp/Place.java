@@ -9,7 +9,7 @@ public class Place {
     private String mWeb;
     private String mLocation;
     private String mCategory;
-    public final static String POPULARS = "Popular";
+    public final static String POPULARS = "Popular Places";
     public final static String MUSEUMS = "Museums";
     public final static String RESTAURANTS = "Restaurants";
     public final static String PUBS = "Pubs";

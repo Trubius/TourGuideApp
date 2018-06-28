@@ -2,6 +2,8 @@ package com.example.android.tourguideapp;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,7 +12,7 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-public class PlaceListFragment extends android.support.v4.app.Fragment{
+public class PlaceListFragment extends Fragment {
 
     private String mCategory;
 
@@ -36,5 +38,9 @@ public class PlaceListFragment extends android.support.v4.app.Fragment{
 
     public void setCategory(String category){
         mCategory = category;
+    }
+
+    public void setActionBarTitle(String category){
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(category);
     }
 }

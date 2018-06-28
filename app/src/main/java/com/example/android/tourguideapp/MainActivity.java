@@ -2,6 +2,7 @@ package com.example.android.tourguideapp;
 
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
-    android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
                         ((FrameLayout) findViewById(R.id.container)).removeAllViews();
                         transaction = getSupportFragmentManager().beginTransaction();
                         transaction.replace(R.id.container, fragment);
-                        transaction.addToBackStack(null);
                         transaction.commit();
                     }
 
