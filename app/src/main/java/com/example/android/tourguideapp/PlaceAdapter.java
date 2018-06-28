@@ -10,18 +10,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder> {
 
     private Context mContext;
-    private List<Place> mPlaceList;
-    private List<Place> mFilteredList;
+    private ArrayList<Place> mPlaceList;
 
-    public PlaceAdapter(Context context, List<Place> placeList) {
+    public PlaceAdapter(Context context, ArrayList<Place> placeList) {
         mContext = context;
         mPlaceList = placeList;
-        mFilteredList = new ArrayList<Place>(placeList);
     }
 
     @NonNull
@@ -32,7 +29,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final Place place = mFilteredList.get(position);
+        final Place place = mPlaceList.get(position);
 
         holder.mImageView.setImageResource(place.getImageResourceId());
         holder.mTextView.setText(place.getPlaceName());
@@ -47,17 +44,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder> 
 
     @Override
     public int getItemCount() {
-        return mFilteredList.size();
-    }
-
-    public void setCategory(String category){
-        mFilteredList.clear();
-        for (int i = 0; i < mPlaceList.size(); i++){
-            if (mPlaceList.get(i).getCategory().equals(category)){
-                mFilteredList.add(mPlaceList.get(i));
-            }
-        }
-        notifyDataSetChanged();
+        return mPlaceList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
