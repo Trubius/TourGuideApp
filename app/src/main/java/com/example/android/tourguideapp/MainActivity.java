@@ -63,20 +63,23 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem item) {
                         // Handle navigation view item clicks here.
-                        int id = item.getItemId();
-
-                        if (id == R.id.popular_places) {
-                            replaceFragment(new PopularPlacesFragment());
-                        } else if (id == R.id.museums) {
-                            replaceFragment(new MuseumsFragment());
-                        } else if (id == R.id.restaurants) {
-                            replaceFragment(new RestaurantsFragment());
-                        } else if (id == R.id.pubs) {
-                            replaceFragment(new PubsFragment());
-                        } else if (id == R.id.hotels) {
-                            replaceFragment(new HotelsFragment());
+                        switch (item.getItemId()){
+                            case R.id.popular_places:
+                                replaceFragment(new PopularPlacesFragment());
+                                break;
+                            case R.id.museums:
+                                replaceFragment(new MuseumsFragment());
+                                break;
+                            case R.id.restaurants:
+                                replaceFragment(new RestaurantsFragment());
+                                break;
+                            case R.id.pubs:
+                                replaceFragment(new PubsFragment());
+                                break;
+                            case R.id.hotels:
+                                replaceFragment(new HotelsFragment());
+                                break;
                         }
-
                         mDrawerLayout.closeDrawers();
                         return true;
                     }
