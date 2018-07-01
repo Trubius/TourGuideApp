@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -102,16 +104,20 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Place> places = new ArrayList<Place>();
         places.add(new Place("Budapest", Place.PUBS));
-        places.add(new Place("Text2", Place.PUBS));
+        places.add(new Place("Text1", Place.PUBS));
+        places.add(new Place("Text2", Place.RESTAURANTS));
         places.add(new Place("Text3", Place.RESTAURANTS));
         places.add(new Place("Text4", Place.RESTAURANTS));
-        places.add(new Place("Text5", Place.RESTAURANTS));
+        places.add(new Place("Text5", Place.HOTELS));
         places.add(new Place("Text6", Place.HOTELS));
-        places.add(new Place("Text8", Place.HOTELS));
         places.add(new Place("Text7", Place.POPULARS));
+        places.add(new Place("Text8", Place.MUSEUMS));
         places.add(new Place("Text9", Place.MUSEUMS));
         places.add(new Place("Text10", Place.MUSEUMS));
-        places.add(new Place("Text11", Place.MUSEUMS));
+
+        long seed = System.nanoTime();
+        Collections.shuffle(places, new Random(seed));
+
         return places;
     }
 }
