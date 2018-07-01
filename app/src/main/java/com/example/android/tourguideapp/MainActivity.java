@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         if (navigationView != null) {
             setupDrawerContent(navigationView);
         }
+        navigationView.getMenu().getItem(0).setChecked(true);
 
         if (savedInstanceState != null) {
             return;
@@ -78,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
 
                     private Fragment getFragmentByItemId(int itemId) {
                         switch (itemId) {
+                            case R.id.home:
+                                return new AllPlacesFragment();
                             case R.id.popular_places:
                                 return new PopularPlacesFragment();
                             case R.id.museums:

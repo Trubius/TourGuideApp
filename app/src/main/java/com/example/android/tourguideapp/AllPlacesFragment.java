@@ -2,6 +2,8 @@ package com.example.android.tourguideapp;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,9 +12,9 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-public class AllPlacesFragment extends android.support.v4.app.Fragment{
+public class AllPlacesFragment extends Fragment {
 
-    public AllPlacesFragment(){
+    public AllPlacesFragment() {
         // Required empty public constructor
     }
 
@@ -27,7 +29,12 @@ public class AllPlacesFragment extends android.support.v4.app.Fragment{
         rootView.setAdapter(placeAdapter);
         rootView.setLayoutManager(new GridLayoutManager(getActivity(), mNoOfColumns));
 
-
         return rootView;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.home);
     }
 }

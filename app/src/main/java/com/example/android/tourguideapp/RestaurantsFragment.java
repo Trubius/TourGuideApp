@@ -1,9 +1,9 @@
 package com.example.android.tourguideapp;
 
-public class RestaurantsFragment extends PlaceListFragment{
+public class RestaurantsFragment extends PlaceListFragment {
 
-    public RestaurantsFragment(){
-       setCategory(Place.RESTAURANTS);
+    public RestaurantsFragment() {
+        setCategory(Place.RESTAURANTS);
     }
 
     @Override

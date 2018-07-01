@@ -16,7 +16,7 @@ public class PlaceListFragment extends Fragment {
 
     private String mCategory;
 
-    public PlaceListFragment(){
+    public PlaceListFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class PlaceListFragment extends Fragment {
         return rootView;
     }
 
-    public void setCategory(String category){
+    public void setCategory(String category) {
         mCategory = category;
     }
 
-    public void setActionBarTitle(String category){
+    public void setActionBarTitle(String category) {
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(category);
     }
 }

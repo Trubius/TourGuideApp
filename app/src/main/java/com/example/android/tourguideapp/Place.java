@@ -34,7 +34,7 @@ public class Place {
         return mImageResourceId;
     }
 
-    public String getCategory(){
+    public String getCategory() {
         return mCategory;
     }
 }
