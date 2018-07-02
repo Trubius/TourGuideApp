@@ -9,12 +9,12 @@ public class Place {
     private String mWeb;
     private String mLocation;
     private String mCategory;
+    private int mImageResourceId;
     public final static String POPULARS = "Popular Places";
     public final static String MUSEUMS = "Museums";
     public final static String RESTAURANTS = "Restaurants";
     public final static String PUBS = "Pubs";
     public final static String HOTELS = "Hotels";
-    private int mImageResourceId;
 
     public Place(String placeName, String category) {
         mPlaceName = placeName;

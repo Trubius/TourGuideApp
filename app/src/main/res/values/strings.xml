@@ -8,4 +8,5 @@
     <string name="pubs">Pubs</string>
     <string name="hotels">Hotels</string>
     <string name="home">Home</string>
+    <string name="place_detail">Place detail</string>
 </resources>
