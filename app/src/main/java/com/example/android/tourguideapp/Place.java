@@ -10,7 +10,8 @@ public class Place implements Parcelable {
     private String mAvailableHours;
     private String mPhone;
     private String mWeb;
-    private String mLocation;
+    private double mLat;
+    private double mLng;
     private String mCategory;
     private int mImageResourceId;
     public final static String POPULARS = "Popular Places";
@@ -36,7 +37,8 @@ public class Place implements Parcelable {
         mAvailableHours = in.readString();
         mPhone = in.readString();
         mWeb = in.readString();
-        mLocation = in.readString();
+        mLat = in.readDouble();
+        mLng = in.readDouble();
         mCategory = in.readString();
         mImageResourceId = in.readInt();
     }
@@ -48,7 +50,8 @@ public class Place implements Parcelable {
         dest.writeString(mAvailableHours);
         dest.writeString(mPhone);
         dest.writeString(mWeb);
-        dest.writeString(mLocation);
+        dest.writeDouble(mLat);
+        dest.writeDouble(mLng);
         dest.writeString(mCategory);
         dest.writeInt(mImageResourceId);
     }
