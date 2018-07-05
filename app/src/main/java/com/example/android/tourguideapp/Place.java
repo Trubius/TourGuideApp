@@ -21,8 +21,15 @@ public class Place implements Parcelable {
     public final static String PUBS = "Pubs";
     public final static String HOTELS = "Hotels";
 
-    public Place(String placeName, int imageResourceId, String category) {
+    public Place(String placeName, String description, String address, String hours, String phone, String web, double lat, double lng, int imageResourceId, String category) {
         mPlaceName = placeName;
+        mDescription = description;
+        mAddress = address;
+        mAvailableHours = hours;
+        mPhone = phone;
+        mWeb = web;
+        mLat = lat;
+        mLng = lng;
         mImageResourceId = imageResourceId;
         mCategory = category;
     }
