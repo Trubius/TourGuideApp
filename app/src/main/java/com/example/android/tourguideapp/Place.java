@@ -6,6 +6,7 @@ import android.os.Parcelable;
 public class Place implements Parcelable {
 
     private String mPlaceName;
+    private String mDescription;
     private String mAddress;
     private String mAvailableHours;
     private String mPhone;
@@ -33,6 +34,7 @@ public class Place implements Parcelable {
 
     protected Place(Parcel in) {
         mPlaceName = in.readString();
+        mDescription = in.readString();
         mAddress = in.readString();
         mAvailableHours = in.readString();
         mPhone = in.readString();
@@ -46,6 +48,7 @@ public class Place implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(mPlaceName);
+        dest.writeString(mDescription);
         dest.writeString(mAddress);
         dest.writeString(mAvailableHours);
         dest.writeString(mPhone);
@@ -75,6 +78,34 @@ public class Place implements Parcelable {
 
     public String getPlaceName() {
         return mPlaceName;
+    }
+
+    public String getDescription() {
+        return mDescription;
+    }
+
+    public String getAddress() {
+        return mAddress;
+    }
+
+    public String getAvailableHours() {
+        return mAvailableHours;
+    }
+
+    public String getPhone() {
+        return mPhone;
+    }
+
+    public String getWeb() {
+        return mWeb;
+    }
+
+    public double getLat() {
+        return mLat;
+    }
+
+    public double getLng() {
+        return mLng;
     }
 
     public int getImageResourceId() {
