@@ -9,4 +9,17 @@
     <string name="hotels">Hotels</string>
     <string name="home">Home</string>
     <string name="place_detail">Place detail</string>
+    <string name="description">Description</string>
+    <string name="address">Address</string>
+    <string name="web">Web</string>
+    <string name="phone">Phone</string>
+    <string name="hours">Hours</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="time_interval">10PM-6PM</string>
 </resources>

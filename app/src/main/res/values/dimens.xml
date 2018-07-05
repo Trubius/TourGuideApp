@@ -4,4 +4,8 @@
     <dimen name="nav_header_height">192dp</dimen>
     <dimen name="card_margin">16dp</dimen>
     <dimen name="detail_backdrop_height">256dp</dimen>
+    <dimen name="details_text_size">16sp</dimen>
+    <dimen name="details_text_padding">12dp</dimen>
+    <dimen name="details_image_padding">10dp</dimen>
+    <dimen name="days_width">100dp</dimen>
 </resources>

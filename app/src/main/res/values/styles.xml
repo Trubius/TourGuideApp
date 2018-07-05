@@ -25,4 +25,17 @@
         <item name="android:orientation">vertical</item>
     </style>
 
+    <style name="detailTextInfo">
+        <item name="android:paddingEnd">@dimen/details_text_padding</item>
+        <item name="android:paddingStart">@dimen/details_text_padding</item>
+        <item name="android:paddingTop">@dimen/details_text_padding</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+        <item name="android:textSize">@dimen/details_text_size</item>
+    </style>
+
+    <style name="detailTextNormal">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+        <item name="android:textSize">@dimen/details_text_size</item>
+    </style>
+
 </resources>

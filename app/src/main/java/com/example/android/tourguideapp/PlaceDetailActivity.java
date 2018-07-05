@@ -43,9 +43,6 @@ public class PlaceDetailActivity extends AppCompatActivity implements OnMapReady
         final ImageView imageView = (ImageView) findViewById(R.id.backdrop);
         Glide.with(this).load(imageId).apply(RequestOptions.centerCropTransform()).into(imageView);
 
-        TextView textView = (TextView) findViewById(R.id.name_detail);
-        textView.setText(placeName);
-
         CollapsingToolbarLayout collapsingToolbar = findViewById(R.id.collapsing_toolbar);
         collapsingToolbar.setTitle(placeName);
 
