@@ -39,7 +39,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder> 
             public void onClick(View v) {
                 Context context = v.getContext();
                 Intent intent = new Intent(context, PlaceDetailActivity.class);
-                intent.putExtra("Place Detail", place);
+                intent.putExtra("place_detail", place);
 
                 context.startActivity(intent);
             }

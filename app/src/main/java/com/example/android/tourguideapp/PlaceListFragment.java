@@ -26,7 +26,7 @@ public class PlaceListFragment extends Fragment {
         RecyclerView rootView = (RecyclerView) inflater.inflate(R.layout.content_main, container, false);
         int mNoOfColumns = Utility.calculateNoOfColumns(getActivity());
 
-        ArrayList<Place> listPlaces = MainActivity.getPlacesList();
+        ArrayList<Place> listPlaces = PlaceData.getPlacesList(getContext());
         PlaceFilterer placeFilterer = new PlaceFilterer(listPlaces, mCategory);
         PlaceAdapter placeAdapter = new PlaceAdapter(getActivity(), placeFilterer.getFilteredPlaces());
         rootView.setAdapter(placeAdapter);

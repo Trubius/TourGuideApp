@@ -12,10 +12,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
-
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
@@ -98,26 +94,5 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
-    }
-
-    public static ArrayList<Place> getPlacesList() {
-
-        ArrayList<Place> places = new ArrayList<Place>();
-        places.add(new Place("Budapest", R.drawable.sample_0, Place.PUBS));
-        places.add(new Place("Text1", R.drawable.sample_1, Place.PUBS));
-        places.add(new Place("Text2", R.drawable.sample_2, Place.RESTAURANTS));
-        places.add(new Place("Text3", R.drawable.sample_3, Place.RESTAURANTS));
-        places.add(new Place("Text4", R.drawable.sample_4, Place.RESTAURANTS));
-        places.add(new Place("Text5", R.drawable.sample_5, Place.HOTELS));
-        places.add(new Place("Text6", R.drawable.sample_6, Place.HOTELS));
-        places.add(new Place("Text7", R.drawable.sample_7, Place.POPULARS));
-        places.add(new Place("Text8", R.drawable.sample_0, Place.MUSEUMS));
-        places.add(new Place("Text9", R.drawable.sample_1, Place.MUSEUMS));
-        places.add(new Place("Text10", R.drawable.sample_2, Place.MUSEUMS));
-
-        long seed = System.nanoTime();
-        Collections.shuffle(places, new Random(seed));
-
-        return places;
     }
 }
