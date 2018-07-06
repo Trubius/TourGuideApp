@@ -43,6 +43,7 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -65,10 +66,10 @@
 
                     <TextView
                         android:id="@+id/description"
+                        style="@style/detailTextNormal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/description"
-                        style="@style/detailTextNormal" />
+                        android:text="@string/description" />
 
                 </LinearLayout>
 
@@ -97,13 +98,13 @@
 
                     <TextView
                         android:id="@+id/address_text"
+                        style="@style/detailTextInfo"
                         android:layout_width="0dp"
                         android:layout_height="48dp"
                         android:text="@string/address"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/address_icon"
-                        app:layout_constraintTop_toTopOf="parent"
-                        style="@style/detailTextInfo" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
                         android:id="@+id/web_icon"
@@ -116,14 +117,13 @@
 
                     <TextView
                         android:id="@+id/web_text"
+                        style="@style/detailTextInfo"
                         android:layout_width="0dp"
                         android:layout_height="48dp"
-                        android:autoLink="web"
                         android:text="@string/web"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/web_icon"
-                        app:layout_constraintTop_toBottomOf="@id/address_text"
-                        style="@style/detailTextInfo" />
+                        app:layout_constraintTop_toBottomOf="@id/address_text" />
 
                     <ImageView
                         android:id="@+id/phone_icon"
@@ -136,14 +136,14 @@
 
                     <TextView
                         android:id="@+id/phone_text"
+                        style="@style/detailTextInfo"
                         android:layout_width="0dp"
                         android:layout_height="48dp"
-                        android:autoLink="phone"
                         android:text="@string/phone"
+                        android:textIsSelectable="false"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/phone_icon"
-                        app:layout_constraintTop_toBottomOf="@id/web_text"
-                        style="@style/detailTextInfo" />
+                        app:layout_constraintTop_toBottomOf="@id/web_text" />
 
                 </android.support.constraint.ConstraintLayout>
 
@@ -176,142 +176,143 @@
 
                     <TextView
                         android:id="@+id/mondays"
+                        style="@style/detailTextNormal"
                         android:layout_width="@dimen/days_width"
                         android:layout_height="wrap_content"
                         android:text="@string/monday"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/hours"
-                        style="@style/detailTextNormal" />
+                        app:layout_constraintTop_toBottomOf="@id/hours" />
 
                     <TextView
                         android:id="@+id/monday"
+                        style="@style/detailTextNormal"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="@string/time_interval"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/hours"
                         app:layout_constraintStart_toEndOf="@id/mondays"
-                        style="@style/detailTextNormal" />
+                        app:layout_constraintTop_toBottomOf="@id/hours" />
 
                     <TextView
                         android:id="@+id/tuesdays"
+                        style="@style/detailTextNormal"
                         android:layout_width="@dimen/days_width"
                         android:layout_height="wrap_content"
                         android:text="@string/tuesday"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/mondays"
-                        style="@style/detailTextNormal" />
+                        app:layout_constraintTop_toBottomOf="@id/mondays" />
 
                     <TextView
                         android:id="@+id/tuesday"
+                        style="@style/detailTextNormal"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="@string/time_interval"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/monday"
                         app:layout_constraintStart_toEndOf="@id/tuesdays"
-                        style="@style/detailTextNormal" />
+                        app:layout_constraintTop_toBottomOf="@id/monday" />
 
                     <TextView
                         android:id="@+id/wednesdays"
+                        style="@style/detailTextNormal"
                         android:layout_width="@dimen/days_width"
                         android:layout_height="wrap_content"
                         android:text="@string/wednesday"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tuesdays"
-                        style="@style/detailTextNormal" />
+                        app:layout_constraintTop_toBottomOf="@id/tuesdays" />
 
                     <TextView
                         android:id="@+id/wednesday"
+                        style="@style/detailTextNormal"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="@string/time_interval"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tuesday"
                         app:layout_constraintStart_toEndOf="@id/wednesdays"
-                        style="@style/detailTextNormal" />
+                        app:layout_constraintTop_toBottomOf="@id/tuesday" />
 
                     <TextView
                         android:id="@+id/thursdays"
+                        style="@style/detailTextNormal"
                         android:layout_width="@dimen/days_width"
                         android:layout_height="wrap_content"
                         android:text="@string/thursday"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/wednesdays"
-                        style="@style/detailTextNormal" />
+                        app:layout_constraintTop_toBottomOf="@id/wednesdays" />
 
                     <TextView
                         android:id="@+id/thursday"
+                        style="@style/detailTextNormal"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="@string/time_interval"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/wednesday"
                         app:layout_constraintStart_toEndOf="@id/thursdays"
-                        style="@style/detailTextNormal" />
+                        app:layout_constraintTop_toBottomOf="@id/wednesday" />
 
                     <TextView
                         android:id="@+id/fridays"
+                        style="@style/detailTextNormal"
                         android:layout_width="@dimen/days_width"
                         android:layout_height="wrap_content"
                         android:text="@string/friday"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/thursdays"
-                        style="@style/detailTextNormal" />
+                        app:layout_constraintTop_toBottomOf="@id/thursdays" />
 
                     <TextView
                         android:id="@+id/friday"
+                        style="@style/detailTextNormal"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="@string/time_interval"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/thursday"
                         app:layout_constraintStart_toEndOf="@id/fridays"
-                        style="@style/detailTextNormal" />
+                        app:layout_constraintTop_toBottomOf="@id/thursday" />
 
                     <TextView
                         android:id="@+id/saturdays"
+                        style="@style/detailTextNormal"
                         android:layout_width="@dimen/days_width"
                         android:layout_height="wrap_content"
                         android:text="@string/saturday"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/fridays"
-                        style="@style/detailTextNormal" />
+                        app:layout_constraintTop_toBottomOf="@id/fridays" />
 
                     <TextView
                         android:id="@+id/saturday"
+                        style="@style/detailTextNormal"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="@string/time_interval"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/friday"
                         app:layout_constraintStart_toEndOf="@id/saturdays"
-                        style="@style/detailTextNormal" />
+                        app:layout_constraintTop_toBottomOf="@id/friday" />
 
                     <TextView
                         android:id="@+id/sundays"
+                        style="@style/detailTextNormal"
                         android:layout_width="@dimen/days_width"
                         android:layout_height="wrap_content"
                         android:text="@string/sunday"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/saturdays"
-                        style="@style/detailTextNormal" />
+                        app:layout_constraintTop_toBottomOf="@id/saturdays" />
 
                     <TextView
                         android:id="@+id/sunday"
+                        style="@style/detailTextNormal"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="@string/time_interval"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/saturday"
                         app:layout_constraintStart_toEndOf="@id/sundays"
-                        style="@style/detailTextNormal" />
+                        app:layout_constraintTop_toBottomOf="@id/saturday" />
 
                 </android.support.constraint.ConstraintLayout>
 
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/map_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/card_margin"
