@@ -8,4 +8,8 @@
     <dimen name="details_text_padding">12dp</dimen>
     <dimen name="details_image_padding">10dp</dimen>
     <dimen name="days_width">100dp</dimen>
+    <dimen name="header_text">18sp</dimen>
+    <dimen name="map_fragment_height">300dp</dimen>
+    <dimen name="icon_size">48dp</dimen>
+    <dimen name="card_image_size">180dp</dimen>
 </resources>

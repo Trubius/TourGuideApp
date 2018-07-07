@@ -27,6 +27,7 @@
                 android:id="@+id/backdrop"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:contentDescription="@string/backdrop"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
                 app:layout_collapseMode="parallax" />
@@ -89,8 +90,9 @@
 
                     <ImageView
                         android:id="@+id/address_icon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_width="@dimen/icon_size"
+                        android:layout_height="@dimen/icon_size"
+                        android:contentDescription="@string/address"
                         android:padding="@dimen/details_image_padding"
                         android:src="@drawable/ic_location_on"
                         app:layout_constraintStart_toStartOf="parent"
@@ -100,7 +102,7 @@
                         android:id="@+id/address_text"
                         style="@style/detailTextInfo"
                         android:layout_width="0dp"
-                        android:layout_height="48dp"
+                        android:layout_height="@dimen/icon_size"
                         android:text="@string/address"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/address_icon"
@@ -108,8 +110,9 @@
 
                     <ImageView
                         android:id="@+id/web_icon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_width="@dimen/icon_size"
+                        android:layout_height="@dimen/icon_size"
+                        android:contentDescription="@string/web"
                         android:padding="@dimen/details_image_padding"
                         android:src="@drawable/ic_public"
                         app:layout_constraintStart_toStartOf="parent"
@@ -119,7 +122,7 @@
                         android:id="@+id/web_text"
                         style="@style/detailTextInfo"
                         android:layout_width="0dp"
-                        android:layout_height="48dp"
+                        android:layout_height="@dimen/icon_size"
                         android:text="@string/web"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/web_icon"
@@ -127,8 +130,9 @@
 
                     <ImageView
                         android:id="@+id/phone_icon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_width="@dimen/icon_size"
+                        android:layout_height="@dimen/icon_size"
+                        android:contentDescription="@string/phone"
                         android:padding="@dimen/details_image_padding"
                         android:src="@drawable/ic_call"
                         app:layout_constraintStart_toStartOf="parent"
@@ -138,7 +142,7 @@
                         android:id="@+id/phone_text"
                         style="@style/detailTextInfo"
                         android:layout_width="0dp"
-                        android:layout_height="48dp"
+                        android:layout_height="@dimen/icon_size"
                         android:text="@string/phone"
                         android:textIsSelectable="false"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -329,7 +333,7 @@
                         android:id="@+id/map"
                         android:name="com.google.android.gms.maps.SupportMapFragment"
                         android:layout_width="match_parent"
-                        android:layout_height="300dp" />
+                        android:layout_height="@dimen/map_fragment_height" />
 
                 </LinearLayout>
 
