@@ -8,18 +8,30 @@ public class Place implements Parcelable {
     private String mPlaceName;
     private String mDescription;
     private String mAddress;
-    private String mAvailableHours;
+    private String mAvailableHours = NO_HOURS;
     private String mPhone;
     private String mWeb;
     private double mLat;
     private double mLng;
     private String mCategory;
     private int mImageResourceId;
+    private final static String NO_HOURS = "no hours";
     public final static String POPULARS = "Popular Places";
     public final static String MUSEUMS = "Museums";
-    public final static String RESTAURANTS = "Restaurants";
-    public final static String PUBS = "Pubs";
+    public final static String PUBS = "Pubs and Restaurants";
     public final static String HOTELS = "Hotels";
+
+    public Place(String placeName, String description, String address, String phone, String web, double lat, double lng, String category, int imageResourceId) {
+        mPlaceName = placeName;
+        mDescription = description;
+        mAddress = address;
+        mPhone = phone;
+        mWeb = web;
+        mLat = lat;
+        mLng = lng;
+        mCategory = category;
+        mImageResourceId = imageResourceId;
+    }
 
     public Place(String placeName, String description, String address, String hours, String phone, String web, double lat, double lng, String category, int imageResourceId) {
         mPlaceName = placeName;
@@ -32,11 +44,6 @@ public class Place implements Parcelable {
         mLng = lng;
         mCategory = category;
         mImageResourceId = imageResourceId;
-    }
-
-    public Place(String placeName) {
-        mPlaceName = placeName;
-        mCategory = POPULARS;
     }
 
     protected Place(Parcel in) {
@@ -121,5 +128,9 @@ public class Place implements Parcelable {
 
     public String getCategory() {
         return mCategory;
+    }
+
+    public boolean hasHours(){
+        return !mAvailableHours.equals(NO_HOURS);
     }
 }

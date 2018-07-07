@@ -83,8 +83,6 @@ public class MainActivity extends AppCompatActivity {
                                 return new PopularPlacesFragment();
                             case R.id.museums:
                                 return new MuseumsFragment();
-                            case R.id.restaurants:
-                                return new RestaurantsFragment();
                             case R.id.pubs:
                                 return new PubsFragment();
                             case R.id.hotels:
