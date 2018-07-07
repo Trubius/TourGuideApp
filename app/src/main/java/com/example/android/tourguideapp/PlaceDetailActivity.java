@@ -2,6 +2,7 @@ package com.example.android.tourguideapp;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -12,6 +13,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
+import android.text.Layout;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -65,6 +67,9 @@ public class PlaceDetailActivity extends AppCompatActivity implements OnMapReady
 
         TextView textDescription = (TextView) findViewById(R.id.description);
         textDescription.setText(description);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            textDescription.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
+        }
         TextView textAddress = (TextView) findViewById(R.id.address_text);
         textAddress.setText(address);
         textAddress.setOnClickListener(new View.OnClickListener() {
@@ -98,10 +103,16 @@ public class PlaceDetailActivity extends AppCompatActivity implements OnMapReady
             }
         });
 
-        for (int i = 0; i < days.length; i++) {
-            int item = getResources().getIdentifier(days[i], "id", getPackageName());
-            textViews[i] = (TextView) findViewById(item);
-            textViews[i].setText(hours);
+        CardView hoursView = findViewById(R.id.hours_view);
+        if (place.hasHours()) {
+            hoursView.setVisibility(View.VISIBLE);
+            for (int i = 0; i < days.length; i++) {
+                int item = getResources().getIdentifier(days[i], "id", getPackageName());
+                textViews[i] = (TextView) findViewById(item);
+                textViews[i].setText(hours);
+            }
+        } else {
+            hoursView.setVisibility(View.GONE);
         }
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
